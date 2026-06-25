@@ -1,0 +1,10 @@
+AmountOfFish: 0, 6, 7, 12, 13,15
+AmountOfBait: 0, 9, 10,15
+HasBoat: true, false
+grade: good, average, bad
+
+
+IF [AmountOfFish] > 12 THEN [grade] = "good";
+IF [AmountOfBait] >= 10 AND [HasBoat] = "true" AND [AmountOfFish] <= 6 THEN [grade] = "average";
+IF [AmountOfBait] >= 10 AND [HasBoat] = "true" AND [AmountOfFish] > 6 AND [AmountOfFish] <= 12 THEN [grade] = "good";
+IF [AmountOfFish] <= 12 AND ([AmountOfBait] < 10 OR [HasBoat] = "false") THEN [grade] = "bad";
